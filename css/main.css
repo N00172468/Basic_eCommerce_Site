@@ -1,0 +1,24 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.leftCanvas {
+    width: 50%;
+    height: 100vh; /* vh = Viewport Height (Relative to 1%) */
+    background-color: #2E1A47;
+}
+
+.rightCanvas {
+    width: 50%;
+    height: 100vh;
+}
