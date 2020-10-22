@@ -2,7 +2,6 @@ body {
     margin: 0px;
     padding: 0px;
     display: flex;
-    text-decoration: none;
     list-style: none;
 }
 
@@ -10,9 +9,14 @@ body {
     list-style: none;
 } */
 
-/* a {
+a {
     text-decoration: none;
-} */
+    color: white;
+}
+
+a:hover {
+    color: #FFD700;
+}
 
 .leftCanvas {
     width: 50%;
@@ -28,4 +32,6 @@ body {
 .navbar {
     font-family: "Poppins", sans-serif;
     text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 16px;
 }
