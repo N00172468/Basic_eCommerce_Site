@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  console.log("Document has loaded");
+  console.log("Hey hey people, this doc. has loaded");
 });
