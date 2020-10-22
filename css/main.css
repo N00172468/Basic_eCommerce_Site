@@ -1,13 +1,10 @@
+/* ------- GLOBAL ------- */
 body {
     margin: 0px;
     padding: 0px;
     display: flex;
     list-style: none;
 }
-
-/* ul {
-    list-style: none;
-} */
 
 a {
     text-decoration: none;
@@ -18,6 +15,11 @@ a:hover {
     color: #FFD700;
 }
 
+.gold {
+    color: #FFD700;
+}
+
+/* ------- HOME PAGE ------- */
 .leftCanvas {
     width: 50%;
     height: 100vh; /* vh = Viewport Height (Relative to 1%) */
@@ -29,6 +31,17 @@ a:hover {
     height: 100vh;
 }
 
+.companyName {
+    margin-top: 20%;
+    font-family: "Cardo", serif;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 90%;
+    font-size: 100px;
+    color: white;
+}
+
+/* ------- NAVBAR ------- */
 .navbar {
     font-family: "Poppins", sans-serif;
     text-decoration: none;
