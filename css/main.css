@@ -13,10 +13,15 @@ a {
 
 a:hover {
     color: #FFD700;
+    text-decoration: none;
 }
 
 .gold {
     color: #FFD700;
+}
+
+.divider {
+    background-color: #FFD700;
 }
 
 /* ------- HOME PAGE ------- */
@@ -32,7 +37,7 @@ a:hover {
 }
 
 .companyName {
-    margin-top: 20%;
+    margin-top: 25%;
     font-family: "Cardo", serif;
     text-align: center;
     letter-spacing: 2px;
@@ -61,4 +66,14 @@ a:hover {
 
 .loginBtn:hover {
     color: #FFD700;
+}
+
+/* ------- FOOTER ------- */
+.socialMedia {
+    width: 50%;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    letter-spacing: 6px;
+    text-decoration: none;
+    text-align: center;
 }
