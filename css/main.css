@@ -2,15 +2,17 @@ body {
     margin: 0px;
     padding: 0px;
     display: flex;
-}
-
-ul {
+    text-decoration: none;
     list-style: none;
 }
 
-a {
+/* ul {
+    list-style: none;
+} */
+
+/* a {
     text-decoration: none;
-}
+} */
 
 .leftCanvas {
     width: 50%;
@@ -21,4 +23,9 @@ a {
 .rightCanvas {
     width: 50%;
     height: 100vh;
+}
+
+.navbar {
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
 }
