@@ -38,4 +38,14 @@ a:hover {
 
 .rightNav {
     color: black;
+    margin-top: 20px;
+}
+
+.loginBtn {
+    margin-top: 20px;
+    height: 40px;
+}
+
+.loginBtn:hover {
+    color: #FFD700;
 }
