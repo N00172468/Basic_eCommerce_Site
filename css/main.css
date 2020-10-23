@@ -28,7 +28,7 @@ a:hover {
 .leftCanvas {
     width: 50%;
     height: 100vh; /* vh = Viewport Height (Relative to 1%) */
-    background-color: #2E1A47;
+    background-color: #281144;
 }
 
 .rightCanvas {
@@ -37,13 +37,19 @@ a:hover {
 }
 
 .companyName {
-    margin-top: 25%;
+    margin-top: 20%;
     font-family: "Cardo", serif;
     text-align: center;
     letter-spacing: 2px;
     line-height: 90%;
     font-size: 100px;
     color: white;
+}
+
+.subHeading {
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 6px;
+    font-size: 20px;
 }
 
 /* ------- NAVBAR ------- */
