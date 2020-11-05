@@ -14,30 +14,22 @@
             "manufacturer": "manufacturer 2",
             "price": 1999,
             "image": "images/Ernst_Benz_1.png"
-        },
-
-        {
-            "id": 3,
-            "name": "watch 3",
-            "manufacturer": "manufacturer 3",
-            "price": 700,
-            "image": "images/armani_1.png"
         }
     ],
 
     "women": [
         {
-            "id": 4,
-            "name": "watch 4",
-            "manufacturer": "manufacturer 4",
+            "id": 3,
+            "name": "watch 3",
+            "manufacturer": "manufacturer 3",
             "price": 3450,
             "image": "images/michael_kors_1.png"
         },
 
         {
-            "id": 5,
-            "name": "watch 2",
-            "manufacturer": "manufacturer 2",
+            "id": 4,
+            "name": "watch 4",
+            "manufacturer": "manufacturer 4",
             "price": 12999,
             "image": "images/rolex_1.png"
         }
