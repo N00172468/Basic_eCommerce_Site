@@ -1,8 +1,22 @@
+/**
+ * SELECTING & FILTERING ELEMENTS
+ */
+function fillBigCanvas(item){
+  console.log('Chosen: ', $("div", "#BigCanvas"));
+  $("#BigCanvas").html(`
+    <img src="${item.image}" width="250"/>
+    ${item.name}
+
+  
+  `);
+};
+
+
 $(document).ready(function() {
   console.log("Testing, 123");
 
   /**
-   * REQUEST SECTION
+   * REQUESTING JSON
    * 
    * @ref - https://www.codegrepper.com/code-examples/delphi/read+json+file+with+vanilla+javascript
    * 
@@ -12,6 +26,15 @@ $(document).ready(function() {
   $.getJSON("watches.json", function(json) {
     console.log('Objects', json); // This will show the info it in firebug console
   
+    // Buttons have an onlcick that runs a function
+    // We want to change the HTML of BigCanvas when a button is clicked
+    //
+
+    var myJSON = JSON.stringify(json);
+    console.log('JSON', myJSON);
+
+    
+
     // If #men then run this:
     json.mens.forEach(item => {
       $('#men').append(
@@ -23,16 +46,21 @@ $(document).ready(function() {
           <p class="contents">
             ${item.name} 
 
-            <br/> 
+            <br/>
             ${item.manufacturer}
 
             <br />
             €${item.price}
 
             <br/>
-            <button class="btn btn-outline-dark loginBtn" type="button">
-              View
+            
+            <button 
+              class="btn btn-outline-dark loginBtn" 
+              type="button" 
+              onclick="fillBigCanvas(${JSON.stringify(item).replace(/"/g, '\'') /**<----- This turns json into a string and replaces these "" with these '' : The reason for this is to stop it breaking the HTML, the /"/g is regex and means all " in the string. '\'' is just ' in quotes but we have to use \ to stop it from closing the quotes*/})">
+                View
             </button>
+            
             <button class="btn btn-outline-dark loginBtn" type="button">
               Add to Cart
             </button>
@@ -69,9 +97,13 @@ $(document).ready(function() {
             €${item.price}
 
             <br/>
-            <button class="btn btn-outline-dark loginBtn" type="button">
-              View
+            <button 
+              class="btn btn-outline-dark loginBtn" 
+              type="button" 
+              onclick="fillBigCanvas(${JSON.stringify(item).replace(/"/g, '\'')})">
+                View
             </button>
+            
             <button class="btn btn-outline-dark loginBtn" type="button">
               Add to Cart
             </button>
@@ -84,7 +116,7 @@ $(document).ready(function() {
 
       // Animation Function:
       $("img", "#women").mouseenter(function(e) {
-        $(this).css("width", "250");
+        $(this).css("width", "290");
       }).mouseout(function(e) {
         $(this).css("width", "175");
       });
