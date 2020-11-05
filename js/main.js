@@ -15,41 +15,79 @@ $(document).ready(function() {
     // If #men then run this:
     json.mens.forEach(item => {
       $('#men').append(
-        `<hr class="divider" />
+        `
+        <hr class="divider" />
 
         <div class="row">
-          <img src="${item.image}" width="175"/>
+          <img src="${item.image}" width="150"/>
           <p class="contents">
             ${item.name} 
+
             <br/> 
             ${item.manufacturer}
+
             <br />
             €${item.price}
+
+            <br/>
+            <button class="btn btn-outline-dark loginBtn" type="button">
+              View
+            </button>
+            <button class="btn btn-outline-dark loginBtn" type="button">
+              Add to Cart
+            </button>
           </p>
         </div>
         
-        <hr class="divider" />`
+        <hr class="divider" />
+        `
       );
+
+      // Animation Function:
+      $("img", "#men").mouseenter(function(e) {
+        $(this).css("width", "250");
+      }).mouseout(function(e) {
+        $(this).css("width", "150");
+      });
     });
 
     // If #women then run this:
     json.women.forEach(item => {
       $('#women').append(
-        `<hr class="divider" />
+        `
+        <hr class="divider" />
 
         <div class="row">
           <img src="${item.image}" width="175"/>
           <p class="contents">
             ${item.name} 
+
             <br/> 
             ${item.manufacturer}
+
             <br />
             €${item.price}
+
+            <br/>
+            <button class="btn btn-outline-dark loginBtn" type="button">
+              View
+            </button>
+            <button class="btn btn-outline-dark loginBtn" type="button">
+              Add to Cart
+            </button>
           </p>
         </div>
 
-        <hr class="divider" />`
+        <hr class="divider" />
+        `
       );
+
+      // Animation Function:
+      $("img", "#women").mouseenter(function(e) {
+        $(this).css("width", "250");
+      }).mouseout(function(e) {
+        $(this).css("width", "175");
+      });
     });
 
     // Styles:
