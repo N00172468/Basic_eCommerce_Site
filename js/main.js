@@ -15,9 +15,7 @@ $(document).ready(function() {
     // var myJSON = JSON.stringify(json);
     // console.log('JSON: ', myJSON);
 
-    
-
-    // If #men then run this:
+    // If #men, run this:
     json.mens.forEach(item => {
       $('#men').append(
         `
@@ -39,7 +37,7 @@ $(document).ready(function() {
             <button 
               class="btn btn-outline-dark loginBtn" 
               type="button" 
-              onclick="fillBigCanvas(${JSON.stringify(item).replace(/"/g, '\'') /**<----- This turns json into a string and replaces these "" with these '' : The reason for this is to stop it breaking the HTML, the /"/g is regex and means all " in the string. '\'' is just ' in quotes but we have to use \ to stop it from closing the quotes*/})">
+              onclick="fillEmptyCanvas(${JSON.stringify(item).replace(/"/g, '\'') /**<----- This turns json into a string and replaces these "" with these '' : The reason for this is to stop it breaking the HTML, the /"/g is regex and means all " in the string. '\'' is just ' in quotes but we have to use \ to stop it from closing the quotes*/})">
                 View
             </button>
             
@@ -55,13 +53,13 @@ $(document).ready(function() {
 
       // Animation Function:
       $("img", "#men").mouseenter(function(e) {
-        $(this).css("width", "250");
+        $(this).css("width", "290");
       }).mouseout(function(e) {
         $(this).css("width", "150");
       });
     });
 
-    // If #women then run this:
+    // If #women, run this:
     json.women.forEach(item => {
       $('#women').append(
         `
@@ -82,7 +80,7 @@ $(document).ready(function() {
             <button 
               class="btn btn-outline-dark loginBtn" 
               type="button" 
-              onclick="fillBigCanvas(${JSON.stringify(item).replace(/"/g, '\'')})">
+              onclick="fillEmptyCanvas(${JSON.stringify(item).replace(/"/g, '\'')})">
                 View
             </button>
             
@@ -123,14 +121,33 @@ $(document).ready(function() {
 /**
  * SELECTING & FILTERING ELEMENTS
  */
-function fillBigCanvas(item){
+function fillEmptyCanvas(item){
   console.log('Chosen Object: ', $("div", "#emptyCanvas"));
   
   $("#emptyCanvas").html(`
-    <img src="${item.image}" width="250"/>
-    ${item.name}
-
+    <div class="row emptyCanvas">
+      <div class="col">
+        <img src="${item.image}" width="350"/>
+      </div>
+      
+      <div class="col emptyCanvas viewContent">
+        <p>
+        <span class="darkGold">${item.name}</span> 
   
+        <br/> 
+        ${item.manufacturer}
+  
+        <br />
+        €${item.price}
+  
+        <br/>
+        <button class="btn btn-outline-dark loginBtn" type="button">
+          Add to Cart
+        </button>
+      </p>
+      </div>
+    </div>
+
   `);
 };
 

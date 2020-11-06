@@ -91,3 +91,28 @@ a:hover {
     text-decoration: none;
     text-align: center;
 }
+
+/* ------- CONTENT PAGES ------- */
+.emptyCanvas {
+    margin: auto;
+    margin-top: 2%;
+    height: auto;
+    width: 50%;
+}
+
+.viewContent {
+    margin: auto;
+    margin-top: 5%;
+    /* width: 31%; */
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.darkGold {
+    color: #ffd000;
+    font-weight: bold;
+}

@@ -2,17 +2,17 @@
     "mens": [
         {
             "id": 1,
-            "name": "watch 1",
-            "manufacturer": "manufacturer 1",
-            "price": 1000,
+            "name": "SuperOcean Automatic 44",
+            "manufacturer": "Breitling",
+            "price": 3174,
             "image": "images/ap_1.png"
         },
 
         {
             "id": 2,
-            "name": "watch 2",
-            "manufacturer": "manufacturer 2",
-            "price": 1999,
+            "name": "John Varatos Limited Edition",
+            "manufacturer": "Ernst Benz",
+            "price": 5086,
             "image": "images/Ernst_Benz_1.png"
         }
     ],
@@ -20,17 +20,17 @@
     "women": [
         {
             "id": 3,
-            "name": "watch 3",
-            "manufacturer": "manufacturer 3",
-            "price": 3450,
+            "name": "Lexington Chronograph",
+            "manufacturer": "Michael Kors",
+            "price": 250,
             "image": "images/michael_kors_1.png"
         },
 
         {
             "id": 4,
-            "name": "watch 4",
-            "manufacturer": "manufacturer 4",
-            "price": 12999,
+            "name": "Oyster Perpetual Superlative",
+            "manufacturer": "Rolex",
+            "price": 5900,
             "image": "images/rolex_1.png"
         }
     ]
