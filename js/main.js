@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // console.log("Testing, 123");
+  console.log("Testing, 123");
 
   /**
    * REQUESTING TO JSON FILE
@@ -10,7 +10,7 @@ $(document).ready(function() {
    * - Count as AJAX?
    */
   $.getJSON("watches.json", function(json) {
-    // console.log('Objects: ', json); // This will show the info it in firebug console
+    console.log('Objects: ', json); // This will show the info it in firebug console
   
     // var myJSON = JSON.stringify(json);
     // console.log('JSON: ', myJSON);
@@ -127,8 +127,8 @@ $(document).ready(function() {
 /**
  * SELECTING & FILTERING ELEMENTS
  */
-function fillEmptyCanvas(item){
-  // console.log('Chosen Object: ', $("div", "#emptyCanvas"));
+function fillEmptyCanvas(item) {
+  console.log('Object being Viewed: ', $("div", "#emptyCanvas"));
   
   $("#emptyCanvas").html(`
     <div class="row emptyCanvas">
@@ -163,7 +163,9 @@ function fillEmptyCanvas(item){
 /**
  * CART MODAL
  */
-function fillEmptyCart(item){
+function fillEmptyCart(item) {
+  console.log('Object added to Cart: ', $("div", "#cartContent"));
+
   $("#cart").html(`
     <button type="button" class="btn btn-outline-dark loginBtn" data-toggle="modal" data-target="#exampleModal">
       <a class="rightNav" href="#" id="cart">
@@ -227,6 +229,7 @@ function fillEmptyCart(item){
  * DELETE FUNCTION
  */
 function deleteContent() {
+  console.log('Object removed from Cart: ', $("div", "#cartContent"));
   $("#cartContent").remove();
 }
 
