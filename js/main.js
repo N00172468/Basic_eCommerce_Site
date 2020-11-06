@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("Testing, 123");
+  // console.log("Testing, 123");
 
   /**
    * REQUESTING TO JSON FILE
@@ -10,7 +10,7 @@ $(document).ready(function() {
    * - Count as AJAX?
    */
   $.getJSON("watches.json", function(json) {
-    console.log('Objects: ', json); // This will show the info it in firebug console
+    // console.log('Objects: ', json); // This will show the info it in firebug console
   
     // var myJSON = JSON.stringify(json);
     // console.log('JSON: ', myJSON);
@@ -55,9 +55,9 @@ $(document).ready(function() {
       );
 
       // Animation Function:
-      $("img", "#men").mouseenter(function(e) {
+      $("img", "#men").mouseenter(function() {
         $(this).css("width", "290");
-      }).mouseout(function(e) {
+      }).mouseout(function() {
         $(this).css("width", "150");
       });
     });
@@ -101,9 +101,9 @@ $(document).ready(function() {
       );
 
       // Animation Function:
-      $("img", "#women").mouseenter(function(e) {
+      $("img", "#women").mouseenter(function() {
         $(this).css("width", "290");
-      }).mouseout(function(e) {
+      }).mouseout(function() {
         $(this).css("width", "175");
       });
     });
@@ -128,7 +128,7 @@ $(document).ready(function() {
  * SELECTING & FILTERING ELEMENTS
  */
 function fillEmptyCanvas(item){
-  console.log('Chosen Object: ', $("div", "#emptyCanvas"));
+  // console.log('Chosen Object: ', $("div", "#emptyCanvas"));
   
   $("#emptyCanvas").html(`
     <div class="row emptyCanvas">
@@ -186,7 +186,7 @@ function fillEmptyCart(item){
           </div>
           <div class="modal-body">
 
-            <div class="row emptyCanvas">
+            <div id="cartContent" class="row emptyCanvas">
               <div class="col">
                 <img src="${item.image}" width="200"/>
               </div>
@@ -202,8 +202,11 @@ function fillEmptyCart(item){
                 €${item.price}
           
                 <br/>
-                <button class="btn btn-outline-danger loginBtn" type="button">
-                  Remove
+                <button 
+                  class="btn btn-outline-danger loginBtn removeBtn" 
+                  type="button"
+                  onclick="deleteContent()">
+                    Remove
                 </button>
               </p>
               </div>
@@ -219,6 +222,15 @@ function fillEmptyCart(item){
     </div>
   `);
 }
+
+/**
+ * DELETE FUNCTION
+ */
+function deleteContent() {
+  $("#cartContent").remove();
+}
+
+
 
 
 
