@@ -1,22 +1,8 @@
-/**
- * SELECTING & FILTERING ELEMENTS
- */
-function fillBigCanvas(item){
-  console.log('Chosen: ', $("div", "#BigCanvas"));
-  $("#BigCanvas").html(`
-    <img src="${item.image}" width="250"/>
-    ${item.name}
-
-  
-  `);
-};
-
-
 $(document).ready(function() {
   console.log("Testing, 123");
 
   /**
-   * REQUESTING JSON
+   * REQUESTING TO JSON FILE
    * 
    * @ref - https://www.codegrepper.com/code-examples/delphi/read+json+file+with+vanilla+javascript
    * 
@@ -24,14 +10,10 @@ $(document).ready(function() {
    * - Count as AJAX?
    */
   $.getJSON("watches.json", function(json) {
-    console.log('Objects', json); // This will show the info it in firebug console
+    console.log('Objects: ', json); // This will show the info it in firebug console
   
-    // Buttons have an onlcick that runs a function
-    // We want to change the HTML of BigCanvas when a button is clicked
-    //
-
-    var myJSON = JSON.stringify(json);
-    console.log('JSON', myJSON);
+    // var myJSON = JSON.stringify(json);
+    // console.log('JSON: ', myJSON);
 
     
 
@@ -129,13 +111,27 @@ $(document).ready(function() {
     $('.contents').css('font-size', '20px');
   });
 
-/**
- * DOM MANIPULATION
- * 
- * Changing the left canvas background colour depending if it's the "For Him"/"For Her" section.
- */
-$('#men').css("background-color", "#839deb");
-$('#women').css("background-color", "#e73895");
+  /**
+   * DOM MANIPULATION
+   * 
+   * Changing the left canvas background colour depending if it's the "For Him"/"For Her" section.
+   */
+  $('#men').css("background-color", "#839deb");
+  $('#women').css("background-color", "#e73895");
 });
+
+/**
+ * SELECTING & FILTERING ELEMENTS
+ */
+function fillBigCanvas(item){
+  console.log('Chosen Object: ', $("div", "#emptyCanvas"));
+  
+  $("#emptyCanvas").html(`
+    <img src="${item.image}" width="250"/>
+    ${item.name}
+
+  
+  `);
+};
 
 
