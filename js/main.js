@@ -1,3 +1,7 @@
+let itemsInCart = []
+
+
+
 $(document).ready(function() {
   console.log("Testing, 123");
 
@@ -37,7 +41,7 @@ $(document).ready(function() {
             <button 
               class="btn btn-outline-dark loginBtn" 
               type="button" 
-              onclick="fillEmptyCanvas(${JSON.stringify(item).replace(/"/g, '\'') /**<----- This turns json into a string and replaces these "" with these '' : The reason for this is to stop it breaking the HTML, the /"/g is regex and means all " in the string. '\'' is just ' in quotes but we have to use \ to stop it from closing the quotes*/})">
+              onclick="fillEmptyCanvas(${JSON.stringify(item).replace(/"/g, '\'')})">
                 View
             </button>
             
@@ -128,6 +132,7 @@ $(document).ready(function() {
  * SELECTING & FILTERING ELEMENTS
  */
 function fillEmptyCanvas(item) {
+console.log('item!!', item)
   console.log('Object being Viewed: ', $("div", "#emptyCanvas"));
   
   $("#emptyCanvas").html(`
@@ -190,33 +195,7 @@ function fillEmptyCart(item) {
             </button>
           </div>
           <div class="modal-body">
-
-            <div id="cartContent" class="row emptyCanvas">
-              <div class="col">
-                <img src="${item.image}" width="200"/>
-              </div>
-              
-              <div class="col emptyCanvas viewContent">
-                <p>
-                <span class="darkGold">${item.name}</span> 
-          
-                <br/> 
-                ${item.manufacturer}
-          
-                <br />
-                €${item.price}
-          
-                <br/>
-                <button 
-                  class="btn btn-outline-danger loginBtn removeBtn" 
-                  type="button"
-                  onclick="deleteContent()">
-                    Remove
-                </button>
-              </p>
-              </div>
-            </div>
-
+            ${watchHTML(item)}
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -234,43 +213,48 @@ function fillEmptyCart(item) {
 function deleteContent() {
   console.log('Object removed from Cart: ', $("div", "#cartContent"));
   $("#cartContent").remove();
+  $('#exampleModal').modal('toggle')
+  
 }
 
-/**
- * UPDATING BADGE VALUE
- * 
- * @ref - https://stackoverflow.com/questions/28501175/updating-text-for-a-badge-inside-a-bootstrap-button
- */
-$(document).on("click", ".cartBtn", function(e) {
-  e.preventDefault();
-
-  // var $label = $(this).find('.text'),
-  //   $badge = $(this).find('.badge'),
-  //   count = Number($badge.text()),
-  //   active = $(this).hasClass('active');
-    
-  // $label.text(active ? 'Item Added' : 'Cart Empty');
-  // $badge.text(active ? count - 1 : count + 1);
-  // $(this).toggleClass('active');
-
-  var btnTitle = $(this).find(".btnTitle");
-  var badge = $(this).find(".cartBadge");
+$(document).on("click", ".removeBtn", function(e) {
+  var badge = $(".cartBadge")
   var count = parseInt(badge.text());
+  var btnTitle = $(".btnTitle");
 
-  if($(this).hasClass('active')) {
-    // $(document).on("click", ".removeBtn", function(e) {
-    //   e.preventDefault();
+
+  // Once user clicks the "Remove" button in the cart, update modal button to this:
+  btnTitle.text("Empty");
+  badge.text('');
+  $(this).removeClass('active');
+  })
+
+// Reusable Component:
+const watchHTML = (item) => `
+  <div id="cartContent" class="row emptyCanvas">
+    <div class="col">
+      <img src="${item.image}" width="200"/>
+    </div>
+  
+
+    <div class="col emptyCanvas viewContent">
+      <p>
+        <span class="darkGold">${item.name}</span> 
+
+        <br/> 
+        ${item.manufacturer}
+
+        <br />
+        €${item.price}
+      </p>
       
-      btnTitle.text("Empty");
-      badge.text(count - 1);
-      $(this).removeClass('active');
-    // })
-  } else {
-    btnTitle.text("Item Added");
-    badge.text(count + 1);
-    $(this).addClass('active');
-  }
-});
-
-
-
+      <button 
+        id="cartContent"
+        class="btn btn-outline-danger loginBtn removeBtn" 
+        type="button"
+        onclick="deleteContent()">
+          Remove
+      </button>
+    </div>
+  </div>
+`
