@@ -1,7 +1,3 @@
-let itemsInCart = []
-
-
-
 $(document).ready(function() {
   console.log("Testing, 123");
 
@@ -11,14 +7,10 @@ $(document).ready(function() {
    * @ref - https://www.codegrepper.com/code-examples/delphi/read+json+file+with+vanilla+javascript
    * 
    * - Getting data from JSON File.
-   * - Count as AJAX?
    */
   $.getJSON("watches.json", function(json) {
     console.log('Objects: ', json); // This will show the info it in firebug console
   
-    // var myJSON = JSON.stringify(json);
-    // console.log('JSON: ', myJSON);
-
     // If #men, run this:
     json.mens.forEach(item => {
       $('#men').append(
@@ -129,44 +121,9 @@ $(document).ready(function() {
 });
 
 /**
- * SELECTING & FILTERING ELEMENTS
- */
-function fillEmptyCanvas(item) {
-console.log('item!!', item)
-  console.log('Object being Viewed: ', $("div", "#emptyCanvas"));
-  
-  $("#emptyCanvas").html(`
-    <div class="row emptyCanvas">
-      <div class="col">
-        <img src="${item.image}" width="350"/>
-      </div>
-      
-      <div class="col emptyCanvas viewContent">
-        <p>
-        <span class="darkGold">${item.name}</span> 
-  
-        <br/> 
-        ${item.manufacturer}
-  
-        <br />
-        €${item.price}
-  
-        <br/>
-        <button 
-          class="btn btn-outline-dark loginBtn" 
-          type="button"
-          onclick="fillEmptyCart(${JSON.stringify(item).replace(/"/g, '\'')})">
-            Add to Cart
-        </button>
-      </p>
-      </div>
-    </div>
-
-  `);
-};
-
-/**
  * CART MODAL
+ * 
+ * Event Handling
  */
 function fillEmptyCart(item) {
   console.log('Object added to Cart: ', $("div", "#cartContent"));
@@ -205,8 +162,8 @@ function fillEmptyCart(item) {
               data-toggle="modal" 
               data-target="#myModal2">
                 Checkout
-              </button>
-              ${checkoutForm()}
+            </button>
+            ${checkoutForm()}
           </div>
         </div>
       </div>
