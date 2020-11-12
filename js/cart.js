@@ -1,8 +1,7 @@
 /**
- * CART MODAL
+ * SELECTING ELEMENTS & EVENT HANDLING
  * 
- * DOM Manipulation
- * Event Handling
+ * - Once the user clicks the "Add to Cart" button, this function would then display the cart modal button as well as adding the item to the cart.
  */
 function fillEmptyCart(item) {
     console.log('Object added to Cart: ', $("div", "#cartContent"));

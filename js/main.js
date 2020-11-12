@@ -6,7 +6,7 @@ $(document).ready(function() {
    * 
    * @ref - https://www.codegrepper.com/code-examples/delphi/read+json+file+with+vanilla+javascript
    * 
-   * - Getting data from JSON File.
+   * - Fetching data from JSON File.
    */
   $.getJSON("watches.json", function(json) {
     console.log('Objects: ', json); // This will show the info it in firebug console
@@ -114,7 +114,7 @@ $(document).ready(function() {
   /**
    * DOM MANIPULATION
    * 
-   * Changing the left canvas background colour depending if it's the "For Him"/"For Her" section.
+   * - Changing the left canvas background colour depending if it's the "For Him"/"For Her" section.
    */
   $('#men').css("background-color", "#839deb");
   $('#women').css("background-color", "#e73895");

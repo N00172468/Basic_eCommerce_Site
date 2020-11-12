@@ -1,5 +1,7 @@
 /**
- * DELETE FUNCTION
+ * DOM MANIPULATION & EVENT HANDLING
+ * 
+ * - If the user clicks on the "Remove" button in the cart, the item would then be deleted within the modal.
  */
 function deleteContent() {
     console.log('Object removed from Cart: ', $("div", "#cartContent"));

@@ -4,7 +4,7 @@
  * @ref - John Dempsey "register-form-02.html"
  * @ref - https://getbootstrap.com/docs/4.0/components/forms/
  * 
- * - Must be within js file and not separate html file dur to how the Checkout modal button is in the cart and the cart itself is in the js file due to how it pulls data from json. 
+ * - Must be in js file and not in separate html file due to how the Checkout modal button is in the cart and the cart itself is in the js file due to how it pulls data from the json. 
  */
 const checkoutForm = () => `
   <div class="modal right" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
@@ -82,16 +82,12 @@ const checkoutForm = () => `
   </div>
 `
 
-
-
 /**
  * CREDIT CARD VALIDATION
  *
  * @ref - John Dempsey "register-form-02.js"
  *
- * - Includes Nested Loops
  */
-// $(document).ready(function () {
 function checkCardType() {
   checkCardNumber();
   checkCardSecurity();
