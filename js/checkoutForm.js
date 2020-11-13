@@ -116,14 +116,18 @@ function checkCardNumber() {
   let cardNumberField = $("#card_number")[0];
   let cardNumberError = $("#card_number + span.error")[0];
   let cardNumber = cardNumberField.value;
+
   if (cardNumber.length > 0) {
     let checkedCards = $("input[name=card_type]:checked");
+
     if (checkedCards.length === 1) {
       let cardTypeField = $("input[name=card_type]:checked")[0];
       let cardType = cardTypeField.value;
       let constraint = new RegExp(constraints[cardType].regexp, "");
+
       if (!constraint.test(cardNumber)) {
         let message = constraints[cardType].message;
+
         cardNumberError.textContent = message;
         cardNumberField.setCustomValidity(message);
       } else {
@@ -132,6 +136,7 @@ function checkCardNumber() {
       }
     } else {
       let message = "Select a card type to validate your card number.";
+
       cardNumberError.textContent = message;
       cardNumberField.setCustomValidity(message);
     }
@@ -141,6 +146,7 @@ function checkCardNumber() {
 function checkCardExpiry() {
   let cardExpiryField = $("#card_expiry")[0];
   let cardExpiryError = $("#card_expiry + span.error")[0];
+
   if (!cardExpiryField.validity.valid) {
     if (cardExpiryField.validity.patternMismatch) {
       cardExpiryError.textContent = `Card Expiry should be two digits, a forward slash /, and two digits.`;
@@ -151,12 +157,14 @@ function checkCardExpiry() {
     let today = new Date();
     let thisMonth = today.getMonth() + 1;
     let thisYear = today.getFullYear();
+
     if (
       (year === thisYear && month < thisMonth) ||
       year < thisYear ||
       (year > thisYear && !(1 <= month && month <= 12))
     ) {
       let message = `Card Expiry should be valid date in the future.`;
+      
       cardExpiryError.textContent = message;
       cardExpiryField.setCustomValidity(message);
     } else {
@@ -187,14 +195,18 @@ function checkCardSecurity() {
   let cardSecurityField = $("#card_security")[0];
   let cardSecurityError = $("#card_security + span.error")[0];
   let cardSecurity = cardSecurityField.value;
+
   if (cardSecurity.length > 0) {
     let checkedCards = $("input[name=card_type]:checked");
+
     if (checkedCards.length === 1) {
       let cardTypeField = $("input[name=card_type]:checked")[0];
       let cardType = cardTypeField.value;
       let constraint = new RegExp(constraints[cardType].regexp, "");
+
       if (!constraint.test(cardSecurity)) {
         let message = constraints[cardType].message;
+
         cardSecurityError.textContent = message;
         cardSecurityField.setCustomValidity(message);
       } else {
@@ -203,6 +215,7 @@ function checkCardSecurity() {
       }
     } else {
       let message = "Select a card type to validate your card number.";
+
       cardSecurityError.textContent = message;
       cardSecurityField.setCustomValidity(message);
     }
@@ -212,6 +225,7 @@ function checkCardSecurity() {
 function checkCardName() {
   let cardNameField = $("#card_name")[0];
   let cardNameError = $("#card_name + span.error")[0];
+
   if (!cardNameField.validity.valid) {
     if (cardNameField.validity.tooLong) {
       cardNameError.textContent = `Card name should be at most ${cardNameField.maxLength} characters; you entered ${cardNameField.value.length}.`;

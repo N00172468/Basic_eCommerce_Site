@@ -9,7 +9,6 @@ $(document).ready(function() {
    * - Fetching data from JSON File.
    */
   $.getJSON("watches.json", function(json) {
-    console.log('Objects: ', json); // This will show the info it in firebug console
   
     // If #men, run this:
     json.mens.forEach(item => {
