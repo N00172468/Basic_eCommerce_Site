@@ -10,4 +10,4 @@
 - In collaboration with Eoan O'Dea and Ross MacDonald.
 - Designed by John Carlo M. Ramos. 
 
-![Homepage](https://github.com/IADT-CC-Y4-AdvJS/ca-1-javascript-and-jquery-N00172468/blob/master/images/homepage.PNG)
+![Homepage](https://github.com/N00172468/Basic_eCommerce_Site/blob/master/images/homepage.PNG)
